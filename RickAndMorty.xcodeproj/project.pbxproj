@@ -27,6 +27,9 @@
 		F160A1B52D5263EA00DBDE14 /* RickAndMorty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RickAndMorty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F160A1C52D5263EC00DBDE14 /* RickAndMortyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RickAndMortyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F160A1CF2D5263EC00DBDE14 /* RickAndMortyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RickAndMortyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F160A1E22D52719200DBDE14 /* NetworkLayer */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = NetworkLayer; sourceTree = "<group>"; };
+		F160A1E32D5271BC00DBDE14 /* Data */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Data; sourceTree = "<group>"; };
+		F160A1E42D5271D200DBDE14 /* Domain */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Domain; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -75,6 +78,9 @@
 		F160A1AC2D5263EA00DBDE14 = {
 			isa = PBXGroup;
 			children = (
+				F160A1E42D5271D200DBDE14 /* Domain */,
+				F160A1E32D5271BC00DBDE14 /* Data */,
+				F160A1E22D52719200DBDE14 /* NetworkLayer */,
 				F160A1B72D5263EA00DBDE14 /* RickAndMorty */,
 				F160A1C82D5263EC00DBDE14 /* RickAndMortyTests */,
 				F160A1D22D5263EC00DBDE14 /* RickAndMortyUITests */,
