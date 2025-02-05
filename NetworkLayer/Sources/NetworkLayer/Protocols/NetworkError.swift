@@ -8,10 +8,27 @@
 import Foundation
 
 // MARK: - Error Handling
-public enum NetworkError: Error, Sendable {
+public enum NetworkError: Error, Sendable, LocalizedError {
     case invalidURL
     case invalidResponse
     case serverError(statusCode: Int, error: Sendable?)
     case decodingError(Error)
     case requestFailed(Error)
+    
+    // MARK: - Property
+    /// Error description
+    public var errorDescription: String? {
+        switch self {
+        case .invalidURL: 
+            return "Invalid URL 🧐"
+        case .invalidResponse:
+            return "Invalid Response 🫠"
+        case .serverError(statusCode: let code, error: let error):
+            return "We are sorry, something went wrong 🙄, Status Code: \(code), Error: \(String(describing: error))"
+        case .decodingError(let error):
+            return "Decoding Error 🙀, Error: \(error.localizedDescription)"
+        case .requestFailed(let error):
+            return "Failed in making request 👾, Error: \(error.localizedDescription)"
+        }
+    }
 }
