@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "1E394F5C-F752-45B7-AA44-47D342A41E17"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "290EC6C9-58E9-4613-B0E2-E3E70A3907B7"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NetworkLayer/Sources/NetworkLayer/Cache/InMemoryCache.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "insertCacheData(_:for:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "61F46BC4-489F-4D75-9F11-F40C234E2F58"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NetworkLayer/Sources/NetworkLayer/Cache/InMemoryCache.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "getCachedData(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "28D97883-501F-4B71-8985-8A3400B5B3E2"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NetworkLayer/Sources/NetworkLayer/Cache/InMemoryCache.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "getCachedData(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A9B44742-BE15-4CF5-83CD-6430951CC997"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NetworkLayer/Sources/NetworkLayer/Cache/InMemoryCache.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "getCachedData(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E0F06BF0-10FF-4863-8FB6-1599E2F4A24F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NetworkLayer/Sources/NetworkLayer/Cache/InMemoryCache.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "getCachedData(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AAA68BCA-86BA-4476-B4A1-BDE5D86879D4"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Data/Sources/Data/ListOfCharacters/Remote/DefaultGetListOfCharactersRemote.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "getListOfCharacters(with:page:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "AAA68BCA-86BA-4476-B4A1-BDE5D86879D4 - 1cb83c6280251e20"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for Data.DefaultGetListOfCharactersRemote.getListOfCharacters(with: Swift.Optional&lt;Swift.String&gt;, page: Swift.Int) async throws -&gt; Swift.Array&lt;Domain.RickAndMortyCharacter&gt;"
+                  moduleName = "RickAndMorty.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alialaa/Documents/RickAndMorty/Data/Sources/Data/ListOfCharacters/Remote/DefaultGetListOfCharactersRemote.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24">
+               </Location>
+               <Location
+                  uuid = "AAA68BCA-86BA-4476-B4A1-BDE5D86879D4 - 919d7099d3ac612e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for Data.DefaultGetListOfCharactersRemote.getListOfCharacters(with: Swift.Optional&lt;Swift.String&gt;, page: Swift.Int) async throws -&gt; Swift.Array&lt;Domain.RickAndMortyCharacter&gt;"
+                  moduleName = "RickAndMorty.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alialaa/Documents/RickAndMorty/Data/Sources/Data/ListOfCharacters/Remote/DefaultGetListOfCharactersRemote.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24">
+               </Location>
+               <Location
+                  uuid = "AAA68BCA-86BA-4476-B4A1-BDE5D86879D4 - 782c922d6a4e5a26"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for Data.DefaultGetListOfCharactersRemote.getListOfCharacters(with: Swift.Optional&lt;Swift.String&gt;, page: Swift.Int) async throws -&gt; Swift.Array&lt;Domain.RickAndMortyCharacter&gt;"
+                  moduleName = "RickAndMorty.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alialaa/Documents/RickAndMorty/Data/Sources/Data/ListOfCharacters/Remote/DefaultGetListOfCharactersRemote.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24">
+               </Location>
+               <Location
+                  uuid = "AAA68BCA-86BA-4476-B4A1-BDE5D86879D4 - d65abfd2675a3825"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) suspend resume partial function for Data.DefaultGetListOfCharactersRemote.getListOfCharacters(with: Swift.Optional&lt;Swift.String&gt;, page: Swift.Int) async throws -&gt; Swift.Array&lt;Domain.RickAndMortyCharacter&gt;"
+                  moduleName = "RickAndMorty.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alialaa/Documents/RickAndMorty/Data/Sources/Data/ListOfCharacters/Remote/DefaultGetListOfCharactersRemote.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24">
+               </Location>
+               <Location
+                  uuid = "AAA68BCA-86BA-4476-B4A1-BDE5D86879D4 - d65abfd2675a3825"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) suspend resume partial function for Data.DefaultGetListOfCharactersRemote.getListOfCharacters(with: Swift.Optional&lt;Swift.String&gt;, page: Swift.Int) async throws -&gt; Swift.Array&lt;Domain.RickAndMortyCharacter&gt;"
+                  moduleName = "RickAndMorty.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alialaa/Documents/RickAndMorty/Data/Sources/Data/ListOfCharacters/Remote/DefaultGetListOfCharactersRemote.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
