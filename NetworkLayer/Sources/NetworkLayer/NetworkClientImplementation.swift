@@ -16,7 +16,7 @@ public actor NetworkClientImplementation: NetworkClient {
     private let decoder: JSONDecoder
     
     /// Cache for URLRequests
-    private var urlRequestCache: [ObjectIdentifier: URLRequest] = [:]
+    private var urlRequestCache: [String: URLRequest] = [:]
     private let cacheResponse: Caching?
     
     // MARK: - Life cycle
@@ -50,15 +50,14 @@ public actor NetworkClientImplementation: NetworkClient {
         /// IF no CachedData for request,
         /// Check Cache for URLRequest
         /// If exist fire from the Cached one, better for performance than creating new Request instance
-        let requestID = ObjectIdentifier(Request.self)
-        if let cachedURLRequest = urlRequestCache[requestID] {
+        if let cachedURLRequest = urlRequestCache[cacheKey] {
             return try await executeRequest(cachedURLRequest, for: request)
         }
         
         let urlRequest = try buildURLRequest(for: request)
         
         /// Caching the URLRequest
-        urlRequestCache[requestID] = urlRequest
+        urlRequestCache[cacheKey] = urlRequest
         
         return try await executeRequest(urlRequest, for: request)
     }
@@ -138,12 +137,9 @@ public actor NetworkClientImplementation: NetworkClient {
 // MARK: - Generate Cache Key
 extension NetworkClientImplementation {
     private func generateCacheKey<Request: NetworkRequest>(_ request: Request) -> String {
-        let baseKey = configuration.baseURL.appendingPathComponent(request.path).absoluteString
+        let requestId = ObjectIdentifier(Request.self).hashValue
+        let queryParametersKey = request.queryParameters
         
-        let bodyKey = request.body.map {
-            String(data: $0, encoding: .utf8) ?? ""
-        } ?? ""
-        
-        return "\(baseKey)&\(bodyKey)"
+        return "\(requestId)-\(String(describing: queryParametersKey))"
     }
 }
