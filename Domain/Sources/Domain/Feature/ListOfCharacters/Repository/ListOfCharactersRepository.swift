@@ -8,5 +8,5 @@
 import Foundation
 
 public protocol ListOfCharactersRepository {
-    func getListOfCharacters(for page: Int) async throws -> [RickAndMortyCharacter]
+    func getListOfCharacters(with status: String?, page: Int) async throws -> [RickAndMortyCharacter]
 }

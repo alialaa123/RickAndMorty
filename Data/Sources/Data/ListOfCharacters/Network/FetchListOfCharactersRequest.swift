@@ -12,14 +12,14 @@ import Domain
 public struct FetchListOfCharactersRequest: NetworkRequest {
     public typealias Response = ListOfCharactersResponseDTO
     public typealias ErrorType = NetworkError
-    public typealias QueryParameters = DefaultRequestQueryParameters
+    public typealias QueryParameters = FilterQueryParameters
     
     public var path: String { "/character" }
     public var method: HTTPMethod { .get }
-    public var queryParameters: DefaultRequestQueryParameters?
+    public var queryParameters: FilterQueryParameters?
     
     // MARK: - Life cycle
-    public init(page: Int, limit: Int) {
-        self.queryParameters = QueryParameters(page: page, limit: limit)
+    public init(page: Int, limit: Int, status: String? = nil) {
+        self.queryParameters = FilterQueryParameters(page: page, limit: limit, status: status)
     }
 }

@@ -8,7 +8,7 @@
 import Foundation
 
 public protocol ListOfCharactersUseCase {
-    func execute(with page: Int) async throws -> [RickAndMortyCharacter]
+    func execute(with status: String?, page: Int) async throws -> [RickAndMortyCharacter]
 }
 
 public final class DefaultListOfCharactersUseCase: ListOfCharactersUseCase {
@@ -21,7 +21,7 @@ public final class DefaultListOfCharactersUseCase: ListOfCharactersUseCase {
     }
     
     // MARK: - Methods
-    public func execute(with page: Int) async throws -> [RickAndMortyCharacter] {
-        try await repository.getListOfCharacters(for: page)
+    public func execute(with status: String?, page: Int) async throws -> [RickAndMortyCharacter] {
+        try await repository.getListOfCharacters(with: status, page: page)
     }
 }

@@ -19,8 +19,8 @@ public final class DefaultGetListOfCharactersRemote: ListOfCharactersRepository 
     }
     
     // MARK: - Methods
-    public func getListOfCharacters(for page: Int) async throws -> [RickAndMortyCharacter] {
-        let request = FetchListOfCharactersRequest(page: page, limit: 20)
+    public func getListOfCharacters(with status: String?, page: Int) async throws -> [RickAndMortyCharacter] {
+        let request = FetchListOfCharactersRequest(page: page, limit: 20, status: status)
         let requestResponse = try await networkClient.send(request)
         
         let listOfCharacters = requestResponse.results.map { $0.toDomain() }

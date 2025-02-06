@@ -7,9 +7,9 @@
 
 import Foundation
 
-public struct DefaultRequestQueryParameters: Encodable, Sendable {
-    let page: Int
-    let limit: Int
+public struct DefaultRequestQueryParameters: RequestQueryParameters {
+    public let page: Int
+    public let limit: Int
     
     public init(page: Int, limit: Int = 20) {
         self.page = page
