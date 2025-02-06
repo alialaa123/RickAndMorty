@@ -123,7 +123,9 @@ public actor NetworkClientImplementation: NetworkClient {
         
         /// Cache the response
         let cacheKey = generateCacheKey(request)
-        await cacheResponse?.insertCacheData(processedData, for: cacheKey)
+        if let responseData = try? JSONEncoder().encode(processedData) {
+            await cacheResponse?.insertCacheData(responseData, for: cacheKey)
+        }
         
         do {
             return try decoder.decode(Request.Response.self, from: processedData)

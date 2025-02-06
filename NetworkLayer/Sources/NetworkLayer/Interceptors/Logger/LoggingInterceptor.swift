@@ -8,6 +8,9 @@
 import Foundation
 
 public struct LoggingInterceptor: RequestInterceptor, ResponseInterceptor {
+    // MARK: - Life cycle
+    public init() { }
+    
     // MARK: - Methods
     /// Log Request for easy Debugging
     public func adapt(_ request: URLRequest) async throws -> URLRequest {

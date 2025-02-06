@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum CharacterStatus: String, Sendable {
+public enum CharacterStatus: String, Sendable, CaseIterable {
     case alive
     case dead
     case unknown

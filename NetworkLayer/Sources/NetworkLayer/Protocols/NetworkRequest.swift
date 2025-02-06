@@ -32,6 +32,6 @@ public extension NetworkRequest {
     }
     
     var customHeaders: [String: String]? { nil }
-//    var queryParameters: QueryParameters? { nil }
+    var queryParameters: QueryParameters? { nil }
     var body: Data? { nil }
 }
