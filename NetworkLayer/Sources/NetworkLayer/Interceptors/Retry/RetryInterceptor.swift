@@ -10,10 +10,15 @@ import Foundation
 public struct RetryInterceptor: RequestInterceptor {
     // MARK: - Properties
     private let maxRetryCount: Int
+    private let requestInterceptor: RequestInterceptor
     
     // MARK: - Life cycle
-    public init(maxRetryCount: Int = 3) {
+    public init(
+        maxRetryCount: Int = 3,
+        requestInterceptor: RequestInterceptor = DefaultRequestInterceptor()
+    ) {
         self.maxRetryCount = maxRetryCount
+        self.requestInterceptor = requestInterceptor
     }
     
     // MARK: - Methods
@@ -24,21 +29,15 @@ public struct RetryInterceptor: RequestInterceptor {
         repeat {
             retryCount += 1
             do {
-                return try await performRequest(request)
+                return try await requestInterceptor.adapt(request)
             } catch {
                 lastError = error
                 /// this to allow other tasks to run
                 /// by Suspended this task
                 await Task.yield()
             }
-        } while retryCount <= maxRetryCount
+        } while retryCount < maxRetryCount
         
         throw lastError ?? NetworkError.requestFailed(NSError())
-    }
-    
-    private func performRequest(_ request: URLRequest) async throws -> URLRequest {
-        /// to Delay 1 second
-        try await Task.sleep(nanoseconds: 1000_000_000)
-        return request
     }
 }
