@@ -11,7 +11,7 @@ import Domain
 public struct RickAndMortyCharacterDTO: Decodable, Sendable {
     // MARK: - Properties
     public let id: Int
-    public let characterImageURL: String?
+    public let characterImage: String?
     public let characterName: String?
     public let species: String?
     public let status: CharacterStatusDTO?
@@ -20,7 +20,7 @@ public struct RickAndMortyCharacterDTO: Decodable, Sendable {
     // MARK: - Coding key
     public enum CodingKeys: String, CodingKey {
         case id, species, status, gender
-        case characterImageURL = "image"
+        case characterImage = "image"
         case characterName = "name"
     }
     
@@ -28,7 +28,7 @@ public struct RickAndMortyCharacterDTO: Decodable, Sendable {
     public func toDomain() -> RickAndMortyCharacter {
         RickAndMortyCharacter(
             id: id,
-            characterImageURL: characterImageURL ?? "",
+            characterImage: characterImage ?? "",
             characterName: characterName ?? "",
             species: species ?? "",
             status: status?.toDomain() ?? .unknown,

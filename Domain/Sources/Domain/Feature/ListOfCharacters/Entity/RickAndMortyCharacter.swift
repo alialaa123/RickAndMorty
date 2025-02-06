@@ -7,9 +7,9 @@
 
 import Foundation
 
-public struct RickAndMortyCharacter: Sendable {
+public struct RickAndMortyCharacter: Sendable, Equatable, Hashable {
     public let id: Int
-    public let characterImageURL: String
+    public let characterImage: String
     public let characterName: String
     public let species: String
     public let status: CharacterStatus
@@ -17,17 +17,30 @@ public struct RickAndMortyCharacter: Sendable {
     
     public init(
         id: Int,
-        characterImageURL: String,
+        characterImage: String,
         characterName: String,
         species: String,
         status: CharacterStatus,
         gender: CharacterGender
     ) {
         self.id = id
-        self.characterImageURL = characterImageURL
+        self.characterImage = characterImage
         self.characterName = characterName
         self.species = species
         self.status = status
         self.gender = gender
+    }
+    
+    // MARK: - Properties special for View
+    public var characterImageURL: URL {
+        URL(string: characterImage) ?? URL(string: "www.google.com")!
+    }
+    
+    public var backgroundColor: String {
+        switch status {
+        case .alive: return "orange"
+        case .dead: return "red"
+        case .unknown: return "purple"
+        }
     }
 }
