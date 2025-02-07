@@ -1,7 +1,7 @@
 
 # Rick and Morty
 
-This Application about showing list of RickAndMorty's characters with filter option for characters status, then user can select any character to show the next view for character details.
+This application displays a list of Rick and Morty characters with a filter option for character status. Users can select any character to view detailed information in the next screen.
 
 ### Project Overview
 This project is a demonstration of modern iOS development practices, leveraging MVVM architecture, Clean Architecture, and SwiftUI for building a scalable and maintainable application. 
@@ -22,22 +22,35 @@ The project also incorporates advanced patterns such as Repository Pattern, Depe
 ###### The project leverages Swift's modern concurrency features, including Sendable, to ensure thread-safe data handling and improve performance.
 
 ### Key Feature
-#### - Generic Components: 
-For reusability, less reduntent code
+#### - Generic Components
+For reusability, less redundant code
 
-#### - Protocol-Oriented 
-For clear, decoupled, testability
+#### - Protocol-Oriented
+The use of protocols ensures clear, decoupled, and testable code, making it easier to mock dependencies and write unit tests.
 
-#### - Swift new concurrency
-Using async/ await, actors with sendable to making safer shared state, thread safe data handling.
+#### - Swift Concurrency
+The project utilizes modern Swift concurrency features such as `async/await`, `Actors`, and `Sendable` to handle asynchronous tasks safely and efficiently, ensuring thread-safe data handling.
 
-### # Network Layer
-In this project, I build Network layer based on new concurrency of swift, rely on `Actors` for `networkClient:` make it safer for multiple tasks that can hit simultaneously as NetworkClient declared as actor is puts it in isolation, ensure that only one task can access their state at a time, preventing data races.
+## # Network Layer
+The network layer is built using Swift's new concurrency model, relying on `Actors` for the `networkClient:`. By declaring the `networkClient` as an actor, the project ensures that only one task can access its state at a time, preventing data races and ensuring thread safety.
 
-Mark most of protocols with `Sendable` that ensure that object that implement this protocol follow the rules that the data is either immutable or thread-safe and safer for shared state across concurrent domains 
+Most protocols are marked with `Sendable` ensuring that objects implementing these protocols follow rules for immutability or thread safety. This makes shared state safer across concurrent domains.
+
+## # Unit Testing
+The project includes comprehensive unit tests for both the Network Layer and Data Layer:
+
+#### Network Layer Tests:
+
+- Ensure that API requests and responses are handled correctly, including error cases and edge scenarios.
+
+#### Data Layer Tests:
+
+- Validate data transformation, persistence, and retrieval logic, ensuring consistency and reliability.
+
+These tests are written using XCTest and leverage mocking to isolate dependencies, ensuring that the tests are reliable and focused on specific functionality.
 
 
-### Technologies and Tools
+## # Technologies and Tools
 
 **SwiftUI:** For building declarative and modern UIs.
 
@@ -45,10 +58,10 @@ Mark most of protocols with `Sendable` that ensure that object that implement th
 
 **async/await:** To handle asynchronous tasks in a clean and readable way.
 
-**actor/sendable:** For modern Swift concurrency features to ensure efficient, safe
+**actor/sendable:** For modern Swift concurrency features, ensuring efficient and safe state management.
 
-**Dependency Injection:** For managing dependencies.
+**Dependency Injection:** For managing dependencies in a clean and testable way.
 
 **Coordinator Pattern:** For navigation management.
 
-**Clean Architecture:** For separation of concerns and scalability, using centeralization for Bussines logic `Domain`.
+**Clean Architecture:** For separation of concerns and scalability, with centralized business logic in the `Domain Layer`.
