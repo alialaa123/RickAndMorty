@@ -36,6 +36,9 @@ final class MainListOfCharactersViewModel: ObservableObject {
     /// AnyCancellable
     private var cancellable = Set<AnyCancellable>()
     
+    /// Task for fetchCharacters
+    private var fetchCharactersTask: Task<Void, Never>?
+    
     // MARK: - Life cycle
     init(
         listOfCharactersUseCase: ListOfCharactersUseCase,
@@ -51,11 +54,16 @@ final class MainListOfCharactersViewModel: ObservableObject {
         observationCharacterSelected()
     }
     
+    deinit {
+        fetchCharactersTask?.cancel()
+    }
+    
     // MARK: - Methods
     private func getListOfCharacters() {
         guard !isLoading, canLoadMoreCharacters else { return }
         isLoading = true
-        Task {
+        fetchCharactersTask = Task { [weak self] in
+            guard let self else { return }
             do {
                 canLoadMoreCharacters = false
                 let listOfCharacters = try await listOfCharactersUseCase.execute(
