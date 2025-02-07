@@ -19,7 +19,7 @@ final class NetworkClientTests: XCTestCase {
         super.tearDown()
     }
     
-    func test_sendRequest_whenRequestIs_successful_withValidData() async {
+    func test_sendRequest_withValidData_thenRequestIsSuccessful() async {
         // Arrange
         let response = HTTPURLResponse(
             url: URL(string: "https://api.example.com")!,
@@ -41,7 +41,7 @@ final class NetworkClientTests: XCTestCase {
         }
     }
     
-    func test_sendRequest_whenRequestIs_failed_withNoData_AndValidResponse() async {
+    func test_sendRequest_withNoDataAndValidResponse_thenRequestIsFailed() async {
         // Arrange
         let response = HTTPURLResponse(
             url: URL(string: "https://api.example.com")!,
@@ -70,7 +70,7 @@ final class NetworkClientTests: XCTestCase {
         }
     }
     
-    func test_sendRequest_withRetryInterceptor_threeTime_thenRequestIs_successful() async {
+    func test_sendRequest_whenRetryInterceptorMaxRetryCountArethree_thenRequestIsSuccessful() async {
         // Arrange
         let mockInterceptor = MockRetryInterceptor()
         mockInterceptor.response = [
@@ -93,7 +93,7 @@ final class NetworkClientTests: XCTestCase {
         }
     }
     
-    func test_sendRequest_withRetryInterceptor_threeTime_thenRequestIs_fail() async {
+    func test_sendRequest_whenRetryInterceptorMaxRetryCountAreThree_thenRequestIsFail() async {
         // Arrange
         let mockInterceptor = MockRetryInterceptor()
         mockInterceptor.response = [
