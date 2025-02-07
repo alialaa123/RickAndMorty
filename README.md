@@ -65,3 +65,11 @@ These tests are written using XCTest and leverage mocking to isolate dependencie
 **Coordinator Pattern:** For navigation management.
 
 **Clean Architecture:** For separation of concerns and scalability, with centralized business logic in the `Domain Layer`.
+
+## # Instructions
+
+Clone the project using Https/SSL
+
+Open .XCProj file
+
+Run the application using Xcode built-in run command
