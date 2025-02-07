@@ -8,14 +8,11 @@
 import SwiftUI
 
 class CustomSwiftUITableViewCell: UITableViewCell {
-    var main: UIHostingController<AnyView>?
-    
     // MARK: - make `swiftUI-view` in tableViewCell
     func makeCell<Content: View>(view: Content) {
-        main?.view.removeFromSuperview()
-        
         let controller = UIHostingController(rootView: AnyView(view))
-        main = controller
+        
+        contentView.subviews.forEach { $0.removeFromSuperview() }
         
         contentView.addSubview(controller.view)
         

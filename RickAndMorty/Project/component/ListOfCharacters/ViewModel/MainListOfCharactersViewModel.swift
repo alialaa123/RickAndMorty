@@ -31,6 +31,7 @@ final class MainListOfCharactersViewModel: ObservableObject {
     
     /// Actions
     let listOfCharactersActions: MainListOfCharactersAction
+    private var canLoadMoreCharacters = true
     
     /// AnyCancellable
     var cancellable = Set<AnyCancellable>()
@@ -52,10 +53,11 @@ final class MainListOfCharactersViewModel: ObservableObject {
     
     // MARK: - Methods
     func getListOfCharacters() {
-        guard !isLoading else { return }
+        guard !isLoading, canLoadMoreCharacters else { return }
         isLoading = true
         Task {
             do {
+                canLoadMoreCharacters = false
                 let listOfCharacters = try await listOfCharactersUseCase.execute(
                     with: filterTabsSelected?.convertToDomain.rawValue,
                     page: currentPage
@@ -97,6 +99,7 @@ final class MainListOfCharactersViewModel: ObservableObject {
         isLoading = false
         shouldShowError = false
         shouldLoadNextPage = false
+        canLoadMoreCharacters = true
     }
     
     @MainActor
@@ -104,6 +107,7 @@ final class MainListOfCharactersViewModel: ObservableObject {
         isLoading = false
         shouldLoadNextPage = false
         shouldShowError = true
+        canLoadMoreCharacters = true
         errorMessage = error.localizedDescription
     }
 }

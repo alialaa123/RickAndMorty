@@ -12,7 +12,7 @@ struct ErrorMessageView: View {
     
     var body: some View {
         VStack {
-            Text("Error: \(errorMessage ?? "")")
+            Text("\(errorMessage ?? "")")
                 .font(.system(size: 14, weight: .light))
                 .foregroundColor(.white)
                 .padding(8)

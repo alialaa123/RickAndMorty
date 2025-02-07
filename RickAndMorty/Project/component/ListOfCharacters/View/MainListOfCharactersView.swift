@@ -39,11 +39,11 @@ struct MainListOfCharactersView: View {
     var BottomContent: some View {
         ZStack(alignment: .top) {
             if let characters = viewModel.characters {
-                TableViewRepresentable(
-                    items: characters,
-                    selectedItem: $viewModel.characterSelected,
-                    loadNextPage: $viewModel.shouldLoadNextPage
-                )
+                TableViewRepresentable(items: characters) {
+                    viewModel.shouldLoadNextPage = true
+                } selectedItem: { character in
+                    viewModel.characterSelected = character
+                }
             }
             
             /// Loading
