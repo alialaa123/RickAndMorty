@@ -23,8 +23,8 @@ public enum NetworkError: Error, Sendable, LocalizedError {
             return "Invalid URL 🧐"
         case .invalidResponse:
             return "Invalid Response 🫠"
-        case .serverError(statusCode: let code, error: let error):
-            return "We are sorry, something went wrong 🙄, Status Code: \(code), Error: \(String(describing: error))"
+        case .serverError(statusCode: let code, error: _):
+            return "We are sorry, something occurs on server 🙄 \(code)"
         case .decodingError(let error):
             return "Decoding Error 🙀, Error: \(error.localizedDescription)"
         case .requestFailed(let error):

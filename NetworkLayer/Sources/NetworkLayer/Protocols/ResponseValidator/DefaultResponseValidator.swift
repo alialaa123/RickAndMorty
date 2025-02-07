@@ -16,8 +16,7 @@ public struct DefaultResponseValidator: ResponseValidator {
     /// in the NetworkRequest, can give it the default with also ability to able a custom validate
     public func validate(_ response: HTTPURLResponse, data: Data) throws {
         guard 200..<300 ~= response.statusCode else {
-            let error = try JSONDecoder().decode(APIError.self, from: data)
-            throw NetworkError.serverError(statusCode: response.statusCode, error: error)
+            throw NetworkError.serverError(statusCode: response.statusCode, error: nil)
         }
     }
 }
