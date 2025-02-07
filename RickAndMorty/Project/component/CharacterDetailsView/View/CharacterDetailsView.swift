@@ -19,7 +19,6 @@ struct CharacterDetailsView: View {
                 ScrollView(.vertical, showsIndicators: false) {
                     CharacterPosterView(
                         characterPoster: viewModel.character?.characterImageURL,
-                        /// Using this approach rather than `.infinity` because it do some issues for the view on iOS 17.0 or less
                         posterWidth: UIScreen.main.bounds.width,
                         posterHeight: UIScreen.main.bounds.height * 0.5,
                         cornerRadius: 36

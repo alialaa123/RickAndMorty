@@ -24,17 +24,17 @@ final class MainListOfCharactersViewModel: ObservableObject {
     /// page
     @Published var shouldLoadNextPage: Bool = false
     @Published var isLoading: Bool = false
-    var currentPage = 1
+    private var currentPage = 1
     
     /// UseCase
-    let listOfCharactersUseCase: ListOfCharactersUseCase
+    private let listOfCharactersUseCase: ListOfCharactersUseCase
     
     /// Actions
-    let listOfCharactersActions: MainListOfCharactersAction
+    private let listOfCharactersActions: MainListOfCharactersAction
     private var canLoadMoreCharacters = true
     
     /// AnyCancellable
-    var cancellable = Set<AnyCancellable>()
+    private var cancellable = Set<AnyCancellable>()
     
     // MARK: - Life cycle
     init(
@@ -52,7 +52,7 @@ final class MainListOfCharactersViewModel: ObservableObject {
     }
     
     // MARK: - Methods
-    func getListOfCharacters() {
+    private func getListOfCharacters() {
         guard !isLoading, canLoadMoreCharacters else { return }
         isLoading = true
         Task {
@@ -69,14 +69,14 @@ final class MainListOfCharactersViewModel: ObservableObject {
         }
     }
     
-    func loadNextPage() {
+    private func loadNextPage() {
         guard shouldLoadNextPage else { return }
         currentPage += 1
         shouldShowError = false
         getListOfCharacters()
     }
     
-    func resetAndLoadListOfCharacters() {
+    private func resetAndLoadListOfCharacters() {
         resetView()
         getListOfCharacters()
     }
