@@ -23,13 +23,13 @@ struct FilterationView: View {
                         } label: {
                             Text(tab.title.capitalized)
                                 .font(.system(size: 18, weight: .regular, design: .rounded))
-                                .foregroundStyle(Color.black)
+                                .foregroundStyle(filterTabSelected != tab ? .black : .blue)
                         }
                     }
                     .padding(12)
                     .overlay(
                         RoundedRectangle(cornerRadius: .infinity)
-                            .stroke(.gray, lineWidth: 1)
+                            .stroke(filterTabSelected != tab ? .gray : .blue, lineWidth: 1.4)
                     )
                 }
             }
