@@ -10,7 +10,7 @@ import Domain
 
 struct CharacterDetailsView: View {
     // MARK: - Properties
-    @State var viewModel: CharacterDetailsViewModel
+    @StateObject var viewModel: CharacterDetailsViewModel
     
     // MARK: - View
     var body: some View {
@@ -35,3 +35,4 @@ struct CharacterDetailsView: View {
         .ignoresSafeArea()
     }
 }
+

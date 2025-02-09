@@ -46,7 +46,7 @@ extension DefaultAppMainDependencyContainer {
         ConfirmActions: CharacterDetailsAction
     ) -> UIHostingController<CharacterDetailsView> {
         let characterDetailsView = CharacterDetailsView(
-            viewModel: makeCharacterDetailsViewModel(
+            viewModel: self.makeCharacterDetailsViewModel(
                 character: character,
                 characterDetailsAction: ConfirmActions
             )
